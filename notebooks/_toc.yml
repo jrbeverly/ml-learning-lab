@@ -1,0 +1,7 @@
+- file: index
+- part: autoencoder
+  chapters:
+    - file: autoencoder/index
+- part: imdb
+  chapters:
+    - file: imdb/index
