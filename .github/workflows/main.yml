@@ -1,0 +1,46 @@
+name: Build HTML and Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-html-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          auto-activate-base: false
+          miniconda-version: "latest"
+          python-version: 3.8
+          environment-file: environment.yml
+          activate-environment: ml-learning-lab
+
+      - name: Install jupyter_book
+        shell: bash -l {0}
+        run: pip install git+https://github.com/ExecutableBookProject/jupyter-book.git@master
+
+      - name: Copy in the project README
+        run: cp README.md notebooks/index.md
+
+      - name: Build Notebooks
+        shell: bash -l {0}
+        run: jb build notebooks/
+
+      - name: Deployment Configuration Settings
+        run: touch notebooks/_build/html/.nojekyll
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        if: github.ref == 'refs/heads/main'
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: notebooks/_build/html
+          CLEAN: true
