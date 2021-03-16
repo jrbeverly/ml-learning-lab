@@ -1,0 +1,10 @@
+title: Machine Learning Lab
+author: jrbeverly
+logo: "logo.png"
+description: >-
+  A collection of Jupyter Notebooks Coursework from Udacity's Deep Learning Nanodegree Foundations
+notebook_interface: "notebook"
+execute:
+  execute_notebooks: force
+html:
+  home_page_in_navbar: false

@@ -1,0 +1,13 @@
+name: ml-learning-lab
+channels:
+  - default
+dependencies:
+  - python=3.8
+  - sphinx
+  - pip
+  - pandas
+  - keras
+  - matplotlib
+  - pip:
+      - quantecon
+      - jupyter-book

@@ -1,0 +1,7 @@
+sphinx
+pandas
+keras
+matplotlib
+quantecon
+jupyter-book
+gym
