@@ -1,0 +1,15 @@
+slug: ml-learning-lab
+description: Machine Learning Lab
+project: udacity
+namespace:
+status: archived
+icon: icon.svg
+license:
+  type: MIT
+  content: Jonathan Beverly <jrbeverly>
+  year: 2021
+topics: |-
+  [
+    "jupyter-notebook",
+    "machine-learning"
+  ]
