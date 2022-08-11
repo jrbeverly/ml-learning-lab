@@ -37,7 +37,6 @@ jobs:
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          name: webpage
           path: notebooks/_build/html/
 
   deploy:
@@ -57,4 +56,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1
         with:
-          artifact_name: webpage
+          artifact_name: github-pages
