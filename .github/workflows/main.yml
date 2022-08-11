@@ -6,6 +6,14 @@ on:
 jobs:
   build-html-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.build-html-and-deploy.outputs.page_url }}
+
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
@@ -23,24 +31,21 @@ jobs:
           activate-environment: ml-learning-lab
 
       - name: Install jupyter_book
-        shell: bash -l {0}
-        run: pip install git+https://github.com/ExecutableBookProject/jupyter-book.git@master
+        shell: bash
+        run: pip install git+https://github.com/ExecutableBookProject/jupyter-book.git@v0.10.1
 
       - name: Copy in the project README
         run: cp README.md notebooks/index.md
 
       - name: Build Notebooks
-        shell: bash -l {0}
+        shell: bash
         run: jb build notebooks/
 
       - name: Deployment Configuration Settings
         run: touch notebooks/_build/html/.nojekyll
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        if: github.ref == 'refs/heads/main'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: notebooks/_build/html
-          CLEAN: true
+          artifact_name: notebooks/_build/helm
