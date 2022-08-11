@@ -17,7 +17,6 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86
 RUN /home/gitpod/conda/bin/conda install jupyter keras tensorflow -y --quiet && \
     pip3 install tensorflow
 
-
 RUN pip3 install dash && \
     pip3 install dash-daq && \
     pip3 install pandas matplotlib

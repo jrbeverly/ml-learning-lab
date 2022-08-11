@@ -5,3 +5,4 @@ matplotlib
 quantecon
 jupyter-book
 gym
+numpy
