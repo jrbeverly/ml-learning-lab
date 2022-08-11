@@ -1,0 +1,24 @@
+image:
+  file: .gitpod/Dockerfile
+
+tasks:
+    - init: >
+          gp open README.md;
+          pip install -r "requirements.txt";
+      command: >
+          gp open README.md;
+          pip install -r "requirements.txt";
+
+ports:
+- port: 8050
+  onOpen: open-preview
+- port: 8888
+  onOpen: open-browser
+
+vscode:
+  extensions:
+    - golang.go
+    - ms-azuretools.vscode-docker
+    - bazelbuild.vscode-bazel
+    - ms-toolsai.jupyter
+    - ms-python.python
