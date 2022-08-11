@@ -21,6 +21,10 @@ jobs:
         with:
           persist-credentials: false
 
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.8' 
+
       - name: Install requirements
         shell: bash
         run: pip install -r requirements.txt
