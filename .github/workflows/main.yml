@@ -27,7 +27,7 @@ jobs:
           auto-update-conda: true
           auto-activate-base: false
           miniconda-version: "latest"
-          python-version: 3.8
+          python-version: 3.9
           environment-file: environment.yml
           activate-environment: ml-learning-lab
 
@@ -45,8 +45,8 @@ jobs:
       - name: Deployment Configuration Settings
         run: touch notebooks/_build/html/.nojekyll
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
-        with:
-          artifact_name: notebooks/_build/helm
+#       - name: Deploy to GitHub Pages
+#         id: deployment
+#         uses: actions/deploy-pages@v1
+#         with:
+#           artifact_name: notebooks/_build/helm
