@@ -43,8 +43,13 @@ jobs:
       - name: Deployment Configuration Settings
         run: touch notebooks/_build/html/.nojekyll
 
+      - uses: actions/upload-artifact@v3
+        with:
+          name: webpage
+          path: notebooks/_build/html
+        
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
         with:
-          artifact_name: notebooks/_build/html
+          artifact_name: webpage
