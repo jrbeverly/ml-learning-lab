@@ -1,11 +1,23 @@
-opencv-python==3.2.0.6
-h5py==2.6.0
-matplotlib==2.0.0
-numpy==1.12.0
-scipy==0.18.1
-tqdm==4.11.2
-keras==2.0.2
-scikit-learn==0.18.1
-pillow==4.0.0
-tensorflow==1.0.0
-pandas==0.19.2
+# h5py==2.6.0
+# matplotlib==2.0.0
+# numpy==1.12.0
+# scipy==0.18.1
+# tqdm==4.11.2
+# keras==2.0.2
+# pillow==4.0.0
+# tensorflow
+# pandas
+# opencv-python
+# conda
+pandas>=1.1.4
+numpy>=1.18.5
+opencv-python>=4.1.2
+matplotlib>=3.2.2
+ipyleaflet>=0.14.0
+sympy>=1.10.1
+
+sklearn
+scikit-learn
+tensorflow
+scipy
+keras

@@ -9,14 +9,13 @@ RUN apt-get update && \
 
 USER gitpod
 
-ENV CONDA_DIR /home/gitpod/conda
-ENV PATH=$CONDA_DIR/bin:$PATH
-RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
-     /bin/bash ~/miniconda.sh -b -p /home/gitpod/conda
+RUN apt update -y && apt upgrade -y
+RUN pip install pipenv
 
-RUN /home/gitpod/conda/bin/conda install jupyter keras tensorflow -y --quiet && \
-    pip3 install tensorflow
+# ENV CONDA_DIR /home/gitpod/conda
+# ENV PATH=$CONDA_DIR/bin:$PATH
+# RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
+#      /bin/bash ~/miniconda.sh -b -p /home/gitpod/conda
 
-RUN pip3 install dash && \
-    pip3 install dash-daq && \
-    pip3 install pandas matplotlib
+# RUN /home/gitpod/conda/bin/conda install jupyter keras tensorflow -y --quiet
+# RUN pip3 install dash dash-daq pandas matplotlib scikit-learn

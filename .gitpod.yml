@@ -2,7 +2,12 @@ image:
   file: .gitpod/Dockerfile
 
 tasks:
-  - command: "pip install -r requirements.txt"
+    - init: >
+          gp open README.md;
+          pip install -r "requirements.txt";
+      command: >
+          gp open README.md;
+          pip install -r "requirements.txt";
 
 ports:
 - port: 8050
