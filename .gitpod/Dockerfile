@@ -4,13 +4,10 @@ USER root
 RUN npm install -g @bazel/bazelisk
 RUN npm install -g @bazel/ibazel
 
-RUN apt-get update && \
-    apt-get install -y -qq wget
+RUN apt update -y && apt upgrade -y && apt-get install -y -qq wget
+RUN pip install pipenv
 
 USER gitpod
-
-RUN apt update -y && apt upgrade -y
-RUN pip install pipenv
 
 # ENV CONDA_DIR /home/gitpod/conda
 # ENV PATH=$CONDA_DIR/bin:$PATH
