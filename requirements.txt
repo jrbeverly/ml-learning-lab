@@ -10,3 +10,6 @@ scikit-learn
 tensorflow
 scipy
 keras
+
+# Notebook
+jinja2==3.0.1
