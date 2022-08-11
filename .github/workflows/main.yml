@@ -35,7 +35,7 @@ jobs:
       - name: Deployment Configuration Settings
         run: touch notebooks/_build/html/.nojekyll
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v1
         with:
           path: notebooks/_build/html/
 
