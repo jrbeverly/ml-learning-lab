@@ -6,3 +6,6 @@
   chapters:
     - file: imdb/index
     - file: student-admissions/index
+- part: blackjack-monte-carlo
+  chapters:
+    - file: blackjack-monte-carlo/index
