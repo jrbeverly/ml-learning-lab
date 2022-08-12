@@ -5,3 +5,4 @@
 - part: imdb
   chapters:
     - file: imdb/index
+    - file: student-admissions/index
