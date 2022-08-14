@@ -11,3 +11,6 @@
 - part: gradient-descent
   chapters:
     - file: gradient-descent/index
+- part: linear-regression
+  chapters:
+    - file: linear-regression/index
