@@ -8,3 +8,6 @@
 - part: blackjack-monte-carlo
   chapters:
     - file: blackjack-monte-carlo/index
+- part: gradient-descent
+  chapters:
+    - file: gradient-descent/index
